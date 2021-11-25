@@ -1,5 +1,9 @@
 import axios from "axios";
 
 export const getApiVersion = async () => {
-  return await axios.get("/api/version");
+  try {
+    return await axios.get("/api/version");
+  } catch (e) {
+    return e;
+  }
 };
