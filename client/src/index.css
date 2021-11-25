@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-blue-100;
+  }
+}
+
+body {
+  background-image: linear-gradient(263deg, transparent 30%, #151440 60%),
+    linear-gradient(343deg, #1a3c8d, #151440 50%);
+}
