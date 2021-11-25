@@ -1,8 +1,11 @@
 import React from "react";
+
 import { getApiVersion } from "./api.js";
+import { useMainStore } from "./store.js";
 
 function App() {
-  const [apiVersion, setApiVersion] = React.useState(undefined);
+  const { apiVersion, setApiVersion } = useMainStore();
+
   React.useEffect(() => {
     getApiVersion().then((retval) => {
       if (retval.status === 200) {
@@ -23,7 +26,7 @@ function App() {
       ) : (
         apiVersion !== undefined && (
           <div className="text-green-600 text-xl">
-            Configuration is properly set up, good job :)
+            Everything is properly set up and working, good job :)
           </div>
         )
       )}
