@@ -1,5 +1,5 @@
-export const setupApiRoutes = async (app) => {
-  app.get("/api/version", function (req, res) {
-    res.send("v1");
+export const setupApiRoutes = async (fastify) => {
+  fastify.get("/api/version", async function (request, reply) {
+    reply.send("v1");
   });
 };
