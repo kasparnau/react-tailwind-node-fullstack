@@ -1,22 +1,20 @@
-import Fastify from "fastify";
+import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
+
 import { setupApiRoutes } from "./routes/index.js";
 
 dotenv.config();
+
 const PORT = process.env.PORT || 8080;
 
-const fastify = Fastify();
+const app = express();
+app.use(express.json({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-const start = async () => {
-  try {
-    setupApiRoutes(fastify);
-    fastify.listen(PORT, () => {
-      console.log("LISTENING ON PORT: " + PORT);
-    });
-  } catch (e) {
-    console.log(e);
-    process.exit(1);
-  }
-};
+setupApiRoutes(app);
 
-start();
+const server = app.listen(PORT, () => {
+  console.log("LISTENING ON PORT: " + PORT);
+});

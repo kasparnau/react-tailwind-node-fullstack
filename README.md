@@ -1,7 +1,6 @@
 # Fullstack React, Node Website Boilerplate
 
 This is a very basic fullstack react, node boilerplate setup, since I could not find any good ones. Really made this for myself to save me some time when starting new projects, setup should be pretty straight forward. I should also probably turn this into a docker, but don't really see it being worth the effort.
-Uses fastify for the backend API.
 
 ## Deployment
 
